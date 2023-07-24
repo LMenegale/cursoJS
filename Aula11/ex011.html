@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    País de origem: <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="pais">
+
+    </div>
+    <script>
+        function verificar() {
+            var txtp = document.querySelector('input#txtpais')
+            var pais = document.querySelector('div#pais')
+            var nac = String(txtp.value)
+            pais.innerHTML = `<p>Seu país de origem é o(a)<strong>${nac}</strong> !</p>`
+            if (nac == Brasil) {
+                pais.innerHTML += `<p>Você é BRASILEIRO!</p>`
+            } else {
+                pais.innerHTML += '<p>Você é ESTRANGEIRO!</p>'
+            }
+            pais.innerHTML += '<p>Diga não à XENOFOBIA</p>'     
+        }
+    </script>
+</body>
+</html>
